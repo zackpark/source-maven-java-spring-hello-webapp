@@ -1,5 +1,7 @@
 pipeline {
-  agent any
+  agent {
+    label "jenkins-node"
+  }
 
   triggers {
     pollSCM('* * * * *')
@@ -23,7 +25,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        deploy adapters: [tomcat9(credentialsId: 'tomcat9_manager', path: '', url: 'http://172.31.46.79:8080/')], contextPath: null, war: 'target/hello-world.war'
+        deploy adapters: [tomcat9(credentialsId: 'tomcat9_manager', path: '', url: 'http://3.36.128.58:8080/')], contextPath: null, war: 'target/hello-world.war'
       }
     }
   }
