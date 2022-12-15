@@ -4,7 +4,7 @@
   tasks:
   - name: Create & Start Container
     docker_container:
-      name: myweb
+      name: hello-world
       image: "docker.io/zackpark/hello-world:{{ lookup('env', 'BUILD_NUMBER') }}"
       state: started
       ports:
