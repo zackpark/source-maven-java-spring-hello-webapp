@@ -56,7 +56,7 @@ spec:
     stage('Build & Tag & Push Docker Image') {
       steps {
         container('kaniko') {
-          sh 'executor --context=dir://$WORKSPACE --destination=docker.io/zackpark/hello-world:$BUILD_NUMBER --destination=docker.io/zackpark/hell-world:latest'
+          sh 'executor --context=dir://$WORKSPACE --destination=docker.io/zackpark/hello-world:$BUILD_NUMBER --destination=docker.io/zackpark/hello-world:latest'
         }
       }
     }
